@@ -1,0 +1,73 @@
+﻿-- profile
+
+set profiling=1;
+select *From sutdent LIMIT 1000;
+
+-- 如何查看sql的执行时间和一些信息
+ 
+show profiles;--查看查询记录
+show profile all for query 192;
+
+set profiling=0;
+
+---------------------------------------------------
+-- Schema（可去官网查询相关schema语句）
+
+--1.打开Schema 并查询
+show variables like 'performance_schema';
+  
+-2.切换到schema数据库
+
+use performance_schema;
+
+--3.查看所有表
+show tables;
+
+--4.语句时间记录表
+show tables like "%statement%";
+
+--5.查看时间计时器
+select *From performance_timers;
+
+---------------------------------------------------
+开启慢查询记录
+1、mysql根目录下MySQL Server 8.0文件夹
+2、找到my.ini
+3、
+#开启慢sql记录文件
+slow-query-log=1
+#慢sql记录文件
+slow_query_log_file="slowquerysql.log"
+#慢sql记录时间
+long_query_time=10
+4、重启MySQL服务
+5、日志在Data文件夹里面
+
+测试
+select sleep(13);
+
+---------------------------------------------------
+--Explain 
+explain select * From  student limit 1000
+重要参数：type（类型） key（主键）  rows（扫描行数） filtered(命中率)
+ type
+ null(无需优化)-->system（作用在系统表上）-->Const(通过一次索引就查询到了，通常会用于主键索引或唯一索引)
+ --> eq_ref(通常会出现在主键或者唯一索引连表查询的 left join )
+ --> ref ref_or_null(通常会出现在普通索引，非唯一索引)
+ -->range
+ -->index(组合索引)
+ --> all(全表扫描)
+ explain select *From student where id=2 --Const
+ explain select min(id) from student ;--system
+ explain select stuno from student where stuno=1001 --ref
+
+ ---------------------------------------------------
+ --Innodb
+ key-len 
+ int 4 bytes
+ int 可为空 4+1=5 bytes
+ varchar(20) 可为空 4bytes*20+1+2=83
+
+
+
+  

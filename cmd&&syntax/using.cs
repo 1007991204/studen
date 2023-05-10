@@ -1,0 +1,1 @@
+﻿global using Microsoft.Extensions.DependencyInjection;//全局引用
