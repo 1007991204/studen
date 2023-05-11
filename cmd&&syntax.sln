@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cmd&&syntax", "cmd&&syntax\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mysql", "mysql\mysql.csproj", "{98A6B31A-53B8-4036-9257-47C0C91F1DEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "singleton", "singleton\singleton.csproj", "{19BF67CF-26D3-4FE1-9530-7BAEEECF17D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "singleton", "singleton\singleton.csproj", "{19BF67CF-26D3-4FE1-9530-7BAEEECF17D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "factory", "factory\factory.csproj", "{FE1293A3-9424-4FC1-B3FA-C3C21686A8A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{19BF67CF-26D3-4FE1-9530-7BAEEECF17D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19BF67CF-26D3-4FE1-9530-7BAEEECF17D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19BF67CF-26D3-4FE1-9530-7BAEEECF17D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1293A3-9424-4FC1-B3FA-C3C21686A8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1293A3-9424-4FC1-B3FA-C3C21686A8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1293A3-9424-4FC1-B3FA-C3C21686A8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1293A3-9424-4FC1-B3FA-C3C21686A8A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
