@@ -1,0 +1,11 @@
+远程到公司电脑
+660025@vpn.iprima.com.cn:4433
+ip:vpn.iprima.com.cn
+端口：4433
+账号：660025
+密码：Kwange
+
+公司电脑
+ip:10.2.35.36
+账号：PRIMA_DEV_100
+密码：1
