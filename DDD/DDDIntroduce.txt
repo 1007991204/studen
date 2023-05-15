@@ -1,1 +1,32 @@
-﻿
+﻿三层架构
+业务接口层
+业务逻辑层
+数据访问曾
+
+DDD四层架构
+用户接口层
+应用层
+领域层
+基础层
+
+Abp.vNext项目创建
+1、Console项目引入
+Volo.Abp.Core
+Volo.Abp.Autofac//属性注入  
+Microsoft.Extensions.Hosting//托管服务的包
+
+2、Web项目引入
+Volo.Abp.AspNetCore.Mvc
+Volo.Abp.Swashbuckle
+Volo.Abp.Autofac
+
+1、
+ABP CLI安装：dotnet tool install -g Volo.Abp.cli
+ABP CLI版本更新：dotnet tool update -g Volo.Abp.Cli
+Console模板项目创建：abp new Test.Project.Console -t console 
+Web模板项目创建（默认MVC项目）：abp new Test.Project.Web
+Mysql mvc 项目：abp new Test.Project.Web -- dbms mysql (abp new xxx -d mongdb)
+Mysqsl web api 项目：abp new Test.Project.Web --dbms mysql -u none --tiered（分层）
+
+2、官网生成：https://abp.io
+
