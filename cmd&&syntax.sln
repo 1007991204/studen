@@ -20,9 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "abstractfactory", "abstract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "prototype", "prototype\prototype.csproj", "{74C74D08-7620-4F53-A50E-328654CCECE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "builder", "builder\builder.csproj", "{DF40CBFF-8435-475F-9E6B-B43537F87ECB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "builder", "builder\builder.csproj", "{DF40CBFF-8435-475F-9E6B-B43537F87ECB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apapter", "apapter\apapter.csproj", "{FA17149C-FDF6-4EF4-BA50-C4EF7387D683}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "apapter", "apapter\apapter.csproj", "{FA17149C-FDF6-4EF4-BA50-C4EF7387D683}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDD", "DDD\DDD.csproj", "{FAC8D073-790E-4742-ACC0-FEEE49760DE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,10 @@ Global
 		{FA17149C-FDF6-4EF4-BA50-C4EF7387D683}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA17149C-FDF6-4EF4-BA50-C4EF7387D683}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA17149C-FDF6-4EF4-BA50-C4EF7387D683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC8D073-790E-4742-ACC0-FEEE49760DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC8D073-790E-4742-ACC0-FEEE49760DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC8D073-790E-4742-ACC0-FEEE49760DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC8D073-790E-4742-ACC0-FEEE49760DE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
