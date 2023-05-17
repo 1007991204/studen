@@ -30,3 +30,55 @@ Mysqsl web api 项目：abp new Test.Project.Web --dbms mysql -u none --tiered�
 
 2、官网生成：https://abp.io
 
+3、
+	// 补充一些静态资源文件中间件、路由中间件、异常处理中间件的一些知识
+	// 这样不仅可以访问wwwroot根目录下的文件，也可以访问Contents目录下的文件了
+	var contentTypeProvider = new FileExtensionContentTypeProvider();
+	contentTypeProvider.Mappings.Add(".abc","text/plain");
+	var staticFileOptions = new StaticFileOptions()
+	{
+	    FileProvider = new PhysicalFileProvider(AppDomain.CurrentDomain.BaseDirectory+"contents"),
+	    RequestPath = "/contents",
+	    ContentTypeProvider = contentTypeProvider
+	};
+	
+	var directoryBrowserOptions = new DirectoryBrowserOptions()
+	{
+	    FileProvider = new PhysicalFileProvider(AppDomain.CurrentDomain.BaseDirectory+"contents"),
+	    RequestPath = "/contents"
+	};
+	
+	var defaultFilesOptions = new DefaultFilesOptions()
+	{
+	    FileProvider = new PhysicalFileProvider(AppDomain.CurrentDomain.BaseDirectory+"contents"),
+	    RequestPath = "/contents"
+	};
+	目录中间件 ：
+	app.UseDirectoryBrowser();
+	app.UseDirectoryBrowser(directoryBrowserOptions);
+	静态资源文件中间件： 
+	app.UseStaticFiles();
+	app.UseStaticFiles(staticFileOptions);
+	路由中间件：
+	app.UseRouting();
+	const string template = @"weather/{city}/{days:int:range(1,4)}";
+	async Task AlbertHandlerAsync(HttpContext context)
+	{
+	    var city = (string)context.GetRouteData().Values["city"];
+	    if (city != null)
+	    {
+	        var days = DateTime.Now.AddDays(int.Parse(city.ToString())).ToString();
+	        await context.Response.WriteAsync($"{city}\r\n{days}");
+	    }
+	    else
+	    {
+	        await context.Response.WriteAsync("City为空");
+	    }
+	    
+	   
+	}
+	app.UseEndpoints(endpoints => endpoints.MapGet(template,AlbertHandlerAsync));
+
+	默认页面中间件：
+	app.UseDefaultFiles();
+	app.UseDefaultFiles(defaultFilesOptions);

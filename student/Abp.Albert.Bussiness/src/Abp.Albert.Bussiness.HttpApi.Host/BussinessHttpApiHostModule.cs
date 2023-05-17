@@ -28,6 +28,8 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace Abp.Albert.Bussiness;
 
@@ -226,6 +228,9 @@ public class BussinessHttpApiHostModule : AbpModule
         }
 
         app.UseAuthorization();
+
+
+
 
         app.UseSwagger();
         app.UseAbpSwaggerUI(options =>
