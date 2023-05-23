@@ -1,0 +1,20 @@
+﻿服务：要获得的对象
+注册服务：将对象注册进去
+服务容器：将对象注册进去
+查询服务：创建对象及关联对象
+对象的生命周期：
+Transient(瞬态)：每次都是新的对象
+Scoped(范围)：
+Singleton（单例）：
+DI扩展包
+
+Autofac 框架
+https://autofac.org/
+
+Scrutor 框架
+https://github.com/sefacan/Scrutor.AspNetCore
+
+Unity 框架
+https://github.com/Delt06/di-framework
+
+.NET 六种过滤器
